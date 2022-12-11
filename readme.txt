@@ -11,4 +11,11 @@
 
 	3) 데이터 버전별 관리/학습 결과 버전별 관리
 
-4. 
+
+host 환경, 실행
+1. server_management git clone
+2. 경로에서 server_management.cmd
+3. flask db init
+4. flask db migrate
+5. flask db upgrade
+6. flask run
