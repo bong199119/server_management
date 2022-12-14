@@ -19,3 +19,19 @@ host 환경, 실행
 4. flask db migrate
 5. flask db upgrade
 6. flask run
+
+
+파이썬 환경
+1. conmmands 설치
+
+
+
+
+
+
+
+
+
+
+
+
