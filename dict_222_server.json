@@ -1,0 +1,225 @@
+{
+  "server_connect": {
+    "222": "connect"
+  },
+  "gpu_detail": {
+    "222": {
+      "gpu id": {
+        "0": [
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1547348",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "1741MiB"
+          },
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549073",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549173",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549318",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          }
+        ],
+        "1": [
+          {
+            "GPU ID": "1",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1547348",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "1",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549073",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "1749MiB"
+          },
+          {
+            "GPU ID": "1",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549173",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "1",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549318",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          }
+        ],
+        "2": [
+          {
+            "GPU ID": "2",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1547348",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "2",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549073",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "2",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549173",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "1749MiB"
+          },
+          {
+            "GPU ID": "2",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549318",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          }
+        ],
+        "3": [
+          {
+            "GPU ID": "3",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1547348",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "3",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549073",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "3",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549173",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "871MiB"
+          },
+          {
+            "GPU ID": "3",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1549318",
+            "Type": "C",
+            "Process name": "/opt/conda/bin/python",
+            "GPU Memory Usage": "1709MiB"
+          }
+        ]
+      }
+    }
+  },
+  "gpu_abstarct": {
+    "222": [
+      {
+        "index": "0",
+        "uuid": "GPU-d7e8960a-d8b6-d3c8-1495-92e3ee2fc072",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 07:42:27.200",
+        "memory.total": "49140",
+        "memory.free": "44328",
+        "memory.used": "4356",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "temperature.gpu": "25",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-b435c879-277b-10de-4588-4710e8a4ac4f",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 07:42:27.201",
+        "memory.total": "49140",
+        "memory.free": "44320",
+        "memory.used": "4364",
+        "utilization.gpu": "100",
+        "utilization.memory": "0",
+        "temperature.gpu": "41",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-0bb0a27a-a681-bf00-9823-d725b1678a39",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 07:42:27.203",
+        "memory.total": "49140",
+        "memory.free": "44320",
+        "memory.used": "4364",
+        "utilization.gpu": "100",
+        "utilization.memory": "0",
+        "temperature.gpu": "40",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-bb630a1a-66df-aa52-8101-7517086f7677",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 07:42:27.203",
+        "memory.total": "49140",
+        "memory.free": "44360",
+        "memory.used": "4324",
+        "utilization.gpu": "100",
+        "utilization.memory": "0",
+        "temperature.gpu": "45",
+        "temperature.memory": "N/A"
+      }
+    ]
+  },
+  "server_cpu_ram": {
+    "222": {
+      "cpu": "cpu usage : 99.8 us%",
+      "ram": "ram usage : 0.04%"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "server_connect": {
+    "221": "connect"
+  },
+  "gpu_detail": {
+    "221": {
+      "gpu id": {
+        "0": [
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "3532121",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "25146MiB"
+          },
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "3532374",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "660MiB"
+          },
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "3532653",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "660MiB"
+          }
+        ],
+        "1": [
+          {
+            "GPU ID": "1",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "3532374",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "17736MiB"
+          }
+        ],
+        "2": [
+          {
+            "GPU ID": "2",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "3532653",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "39932MiB"
+          }
+        ],
+        "3": [
+          {
+            "GPU ID": "3",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "800787",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "13018MiB"
+          }
+        ]
+      }
+    }
+  },
+  "gpu_abstarct": {
+    "221": [
+      {
+        "index": "0",
+        "uuid": "GPU-b42a4ddc-06a9-270c-5333-7147023844ea",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 15:23:28.735",
+        "memory.total": "49140",
+        "memory.free": "22215",
+        "memory.used": "26469",
+        "utilization.gpu": "53",
+        "utilization.memory": "52",
+        "temperature.gpu": "70",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-c03521ab-aa7b-4ced-8f05-d2289c6009ba",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 15:23:28.736",
+        "memory.total": "49140",
+        "memory.free": "30945",
+        "memory.used": "17739",
+        "utilization.gpu": "46",
+        "utilization.memory": "55",
+        "temperature.gpu": "64",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-425ffe6a-1fca-8c2f-f225-30de33366118",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 15:23:28.737",
+        "memory.total": "49140",
+        "memory.free": "8749",
+        "memory.used": "39935",
+        "utilization.gpu": "82",
+        "utilization.memory": "81",
+        "temperature.gpu": "65",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-4264b029-1063-9fdf-4083-7b642bb3a0d2",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 15:23:28.738",
+        "memory.total": "49140",
+        "memory.free": "35663",
+        "memory.used": "13021",
+        "utilization.gpu": "5",
+        "utilization.memory": "3",
+        "temperature.gpu": "57",
+        "temperature.memory": "N/A"
+      }
+    ]
+  },
+  "server_cpu_ram": {
+    "221": {
+      "cpu": "cpu usage : 83.5 us%",
+      "ram": "ram usage : 0.03%"
+    }
+  }
+}

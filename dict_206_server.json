@@ -1,0 +1,15 @@
+{
+  "server_connect": {
+    "206": "connect"
+  },
+  "gpu_detail": {
+    "206": "not use"
+  },
+  "gpu_abstarct": {},
+  "server_cpu_ram": {
+    "206": {
+      "cpu": "cpu usage : 86.3 us%",
+      "ram": "ram usage : 0.04%"
+    }
+  }
+}

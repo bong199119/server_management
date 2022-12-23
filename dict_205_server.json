@@ -1,0 +1,45 @@
+{
+  "server_connect": {
+    "205": "connect"
+  },
+  "gpu_detail": {
+    "205": {
+      "gpu id": {
+        "0": [
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "2351254",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "10265MiB"
+          }
+        ]
+      }
+    }
+  },
+  "gpu_abstarct": {
+    "205": [
+      {
+        "index": "0",
+        "uuid": "GPU-3c7ac8a3-e6b9-db53-d792-53838eee48e0",
+        "name": "NVIDIA GeForce RTX 3090",
+        "timestamp": "2022/12/23 07:42:27.517",
+        "memory.total": "24267",
+        "memory.free": "14000",
+        "memory.used": "10267",
+        "utilization.gpu": "62",
+        "utilization.memory": "62",
+        "temperature.gpu": "68",
+        "temperature.memory": "N/A"
+      }
+    ]
+  },
+  "server_cpu_ram": {
+    "205": {
+      "cpu": "cpu usage : 91.4 us%",
+      "ram": "ram usage : 0.04%"
+    }
+  }
+}

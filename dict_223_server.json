@@ -1,0 +1,84 @@
+{
+  "server_connect": {
+    "223": "connect"
+  },
+  "gpu_detail": {
+    "223": {
+      "gpu id": {
+        "0": [
+          {
+            "GPU ID": "0",
+            "GIID": "N/A",
+            "CIID": "N/A",
+            "PID": "1402858",
+            "Type": "C",
+            "Process name": "python",
+            "GPU Memory Usage": "18975MiB"
+          }
+        ]
+      }
+    }
+  },
+  "gpu_abstarct": {
+    "223": [
+      {
+        "index": "0",
+        "uuid": "GPU-7e799bca-2297-7429-aa6d-92a3d98bef2e",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 16:42:27.680",
+        "memory.total": "48685",
+        "memory.free": "29708",
+        "memory.used": "18977",
+        "utilization.gpu": "100",
+        "utilization.memory": "100",
+        "temperature.gpu": "71",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-c10c0de1-f744-ab81-1598-ed2b4ee43bde",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 16:42:27.682",
+        "memory.total": "48685",
+        "memory.free": "48683",
+        "memory.used": "2",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "temperature.gpu": "35",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-a31ba6fb-db80-3946-d9fd-eb9dc4756d2c",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 16:42:27.683",
+        "memory.total": "48685",
+        "memory.free": "48683",
+        "memory.used": "2",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "temperature.gpu": "26",
+        "temperature.memory": "N/A"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-99ba8b4f-9546-5ac6-ed61-d59c9a40cfda",
+        "name": "NVIDIA RTX A6000",
+        "timestamp": "2022/12/23 16:42:27.684",
+        "memory.total": "48685",
+        "memory.free": "48683",
+        "memory.used": "2",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "temperature.gpu": "27",
+        "temperature.memory": "N/A"
+      }
+    ]
+  },
+  "server_cpu_ram": {
+    "223": {
+      "cpu": "cpu usage : 99.3 us%",
+      "ram": "ram usage : 0.04%"
+    }
+  }
+}
