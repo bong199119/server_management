@@ -1,7 +1,7 @@
 from server_management import db
 
 
-class Question(db.Model):
+class server_monitor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text(), nullable=False)
