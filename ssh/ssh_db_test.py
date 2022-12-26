@@ -6,11 +6,33 @@ import json
 import psutil
 import os
 import threading
+import mariadb
+import pandas as pd
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from config import config
 
 class_config = config.config()
+
+conn = mariadb.connect(
+        user=class_config.mariadb['user'],
+        password=class_config.mariadb['password'],
+        host=class_config.mariadb['host'],
+        port=class_config.mariadb['port'],
+        database=class_config.mariadb['database']
+    )
+
+cur = conn.cursor()
+
+sql_gpu_info = "SELECT * FROM gpu_info"
+sql_server_info = "SELECT * FROM server_info"
+# Use the read_sql function to load the data into a DataFrame
+df_gpu_info = pd.read_sql(sql_gpu_info, conn)
+df_server_info = pd.read_sql(sql_server_info, conn)
+
+print(df_gpu_info)
+print(df_server_info)
+
 list_server = class_config.list_server
 
 DEFAULT_ATTRIBUTES = (
@@ -143,10 +165,19 @@ def check_server(server):
 
             dict_server['server_cpu_ram'][server] = server_cpu_ram
             
-            with open(f'dict_{server}_server.json','w',encoding = 'utf-8') as f:
-                json.dump(dict_server, f, indent=2)    
+            # with open(f'dict_{server}_server.json','w',encoding = 'utf-8') as f:
+            #     json.dump(dict_server, f, indent=2)    
 
-            cli.close()
+            # cli.close()
+
+            # ssh를 통해 받아온 신호처리
+            if dict_server['server_connect'][server] == 'connect':
+                if dict_server['gpu_detail'][server] == 'not use':
+                    1
+                else:
+                    2
+            else:
+                continue
             time.sleep(1)
 
 threads = []
