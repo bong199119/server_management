@@ -86,9 +86,11 @@ def _check_usage_of_cpu_and_memory(cli):
             "ram" : f"ram usage : {memory_usage}%"
         }
 
-        return dict_server_cpu_ram
+        return dict_server_cpu_ram  
 
 def check_server(server):
+    cur = conn.cursor()
+    
     while True:
         dict_server = {}
         gpu_running = False
@@ -173,7 +175,12 @@ def check_server(server):
             # ssh를 통해 받아온 신호처리
             if dict_server['server_connect'][server] == 'connect':
                 if dict_server['gpu_detail'][server] == 'not use':
-                    1
+                    print(df_gpu_info[(df_gpu_info['server_name'] == '221') & (df_gpu_info['gpu_id'] == '13')])
+                    query = "INSERT INTO use_or_not (server_name, gpu_id, gpu_use, server_connect) VALUES (%s, %s, %s, %s)"
+                    values = (server_name, gpu_id, gpu_use, server_connect)
+                    cur.execute(query, values)
+                    conn.commit()
+
                 else:
                     2
             else:
