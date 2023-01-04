@@ -173,6 +173,8 @@ def check_server(server):
             # cli.close()
 
             # ssh를 통해 받아온 신호처리
+            # df_server = df_gpu_info[df_gpu_info['server_name'] == server]
+
             if dict_server['server_connect'][server] == 'connect':
                 if dict_server['gpu_detail'][server] == 'not use':
                     print(df_gpu_info[(df_gpu_info['server_name'] == '221') & (df_gpu_info['gpu_id'] == '13')])
@@ -180,11 +182,15 @@ def check_server(server):
                     values = (server_name, gpu_id, gpu_use, server_connect)
                     cur.execute(query, values)
                     conn.commit()
-
                 else:
                     2
             else:
+                query = "UPDATE gpu_info SET server_use = %s WHERE server_name = %s"
+                values = ('not use', server)
+                cur.execute(query, values)
+                conn.commit()
                 continue
+
             time.sleep(1)
 
 threads = []

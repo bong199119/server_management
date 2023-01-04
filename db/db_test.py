@@ -16,15 +16,22 @@ conn = mariadb.connect(
 
 cur = conn.cursor()
 
-sql_gpu_info = "SELECT * FROM gpu_info"
-sql_server_info = "SELECT * FROM server_info"
-# Use the read_sql function to load the data into a DataFrame
-df_gpu_info = pd.read_sql(sql_gpu_info, conn)
-df_server_info = pd.read_sql(sql_server_info, conn)
+# sql_gpu_info = "SELECT * FROM gpu_info"
+# sql_server_info = "SELECT * FROM server_info"
+# # Use the read_sql function to load the data into a DataFrame
+# df_gpu_info = pd.read_sql(sql_gpu_info, conn)
+# df_server_info = pd.read_sql(sql_server_info, conn)
 
 # print(df_gpu_info)
 # print(df_server_info)
 # Close the connection to the database
+
+
+sql = "UPDATE gpu_info SET server_use = %s WHERE server_name = %s"
+values = ('not use', 221)
+cur.execute(sql, values)
+
+conn.commit()
 conn.close()
 
 # server_name = '205'
@@ -38,4 +45,5 @@ conn.close()
 # conn.commit()
 # conn.close()
 
-print(df_gpu_info[(df_gpu_info['server_name'] == '221') & (df_gpu_info['gpu_id'] == '13')])
+# print(df_gpu_info[(df_gpu_info['server_name'] == '221') & (df_gpu_info['gpu_id'] == '13')])
+
