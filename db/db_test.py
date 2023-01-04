@@ -27,23 +27,25 @@ cur = conn.cursor()
 # Close the connection to the database
 
 
-sql = "UPDATE gpu_info SET server_use = %s WHERE server_name = %s"
-values = ('not use', 221)
-cur.execute(sql, values)
+# sql = "UPDATE gpu_info SET server_use = %s, gpu_use = %s WHERE server_name = %s"
+# values = ('not use', 'not use', 221)
+# cur.execute(sql, values)
 
-conn.commit()
-conn.close()
+# conn.commit()
+# conn.close()
 
 # server_name = '205'
 # gpu_id = '5'
 # gpu_use = ''
 # server_connect = ''
 
+query = "INSERT INTO log (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+values = (1, 1, 1, 1, 1, 1, 1)
 # query = "INSERT INTO use_or_not (server_name, gpu_id, gpu_use, server_connect) VALUES (%s, %s, %s, %s)"
 # values = (server_name, gpu_id, gpu_use, server_connect)
-# cur.execute(query, values)
-# conn.commit()
-# conn.close()
+cur.execute(query, values)
+conn.commit()
+conn.close()
 
 # print(df_gpu_info[(df_gpu_info['server_name'] == '221') & (df_gpu_info['gpu_id'] == '13')])
 

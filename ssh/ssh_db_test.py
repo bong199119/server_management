@@ -9,6 +9,9 @@ import threading
 import mariadb
 import pandas as pd
 import sys, os
+from datetime import datetime
+now = datetime.now()
+
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from config import config
 
@@ -175,18 +178,45 @@ def check_server(server):
             # ssh를 통해 받아온 신호처리
             # df_server = df_gpu_info[df_gpu_info['server_name'] == server]
 
+            # 서버 connect
+            cpu_usage = dict_server['server_cpu_ram'][server]['cpu']
+            ram_usage = dict_server['server_cpu_ram'][server]['ram']
+            server_name = server
+            cpu_temp = ''
+            date = now.strftime('%Y-%m-%d %H:%M:%S')
             if dict_server['server_connect'][server] == 'connect':
+                # gpu not use
                 if dict_server['gpu_detail'][server] == 'not use':
-                    print(df_gpu_info[(df_gpu_info['server_name'] == '221') & (df_gpu_info['gpu_id'] == '13')])
-                    query = "INSERT INTO use_or_not (server_name, gpu_id, gpu_use, server_connect) VALUES (%s, %s, %s, %s)"
-                    values = (server_name, gpu_id, gpu_use, server_connect)
+                    # gpu_info에 gpu 상태 추가
+                    query = "UPDATE gpu_info SET server_use = %s, gpu_use = %s WHERE server_name = %s"
+                    values = ('use', 'not use', server)
                     cur.execute(query, values)
                     conn.commit()
+
+                    # log 테이블에 서버정보 추가
+                    query = "INSERT INTO log (date, server_name, cpu_temp, cpu_usage, ram_usage) VALUES (%s, %s, %s, %s, %s)"
+                    values = (date, server_name, cpu_temp, cpu_usage, ram_usage)
+                    cur.execute(query, values)
+                    conn.commit()
+
+                # gpu use
                 else:
-                    2
+                    # gpu_info에 gpu 상태 추가
+                    query = "UPDATE gpu_info SET server_use = %s, gpu_use = %s WHERE server_name = %s"
+                    values = ('use', 'use', server)
+                    cur.execute(query, values)
+                    conn.commit()
+
+                    # log 테이블에 서버정보와 gpu정보 추가 
+                    query = "INSERT INTO log (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                    values = (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage)
+                    cur.execute(query, values)
+                    conn.commit()
+
+            # 서버 disconnect   
             else:
-                query = "UPDATE gpu_info SET server_use = %s WHERE server_name = %s"
-                values = ('not use', server)
+                query = "UPDATE gpu_info SET server_use = %s, gpu_use = %s WHERE server_name = %s"
+                values = ('not use', 'not use', server)
                 cur.execute(query, values)
                 conn.commit()
                 continue
