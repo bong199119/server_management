@@ -92,9 +92,18 @@ def _check_usage_of_cpu_and_memory(cli):
         return dict_server_cpu_ram  
 
 def check_server(server):
-    cur = conn.cursor()
     
     while True:
+        conn = mariadb.connect(
+        user=class_config.mariadb['user'],
+        password=class_config.mariadb['password'],
+        host=class_config.mariadb['host'],
+        port=class_config.mariadb['port'],
+        database=class_config.mariadb['database']
+        )
+
+        cur = conn.cursor()
+
         dict_server = {}
         gpu_running = False
         dict_server['server_connect'] = {}
@@ -183,6 +192,7 @@ def check_server(server):
             ram_usage = dict_server['server_cpu_ram'][server]['ram']
             server_name = server
             cpu_temp = ''
+
             date = now.strftime('%Y-%m-%d %H:%M:%S')
             if dict_server['server_connect'][server] == 'connect':
                 # gpu not use
@@ -207,11 +217,19 @@ def check_server(server):
                     cur.execute(query, values)
                     conn.commit()
 
-                    # log 테이블에 서버정보와 gpu정보 추가 
-                    query = "INSERT INTO log (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                    values = (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage)
-                    cur.execute(query, values)
-                    conn.commit()
+                    process_gpu_id = dict_server['gpu_detail'][server]['gpu id']
+                    for idx, gpuid in enumerate(process_gpu_id):
+                        for process_info in process_gpu_id[gpuid]:
+                            process = process_info['Process name']
+                            gpu_usage = process_info['GPU Memory Usage']
+                            # log 테이블에 서버정보와 gpu정보 추가
+                            gpu_id = gpuid
+                            gpu_temp = dict_server['gpu_abstarct'][server][idx]['temperature.gpu']
+
+                            query = "INSERT INTO log (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                            values = (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage)
+                            cur.execute(query, values)
+                            conn.commit()
 
             # 서버 disconnect   
             else:
@@ -219,9 +237,9 @@ def check_server(server):
                 values = ('not use', 'not use', server)
                 cur.execute(query, values)
                 conn.commit()
-                continue
 
-            time.sleep(1)
+            time.sleep(2)
+            conn.close()
 
 threads = []
 for server in list_server:
