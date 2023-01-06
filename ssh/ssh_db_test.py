@@ -223,9 +223,9 @@ def check_server(server):
                             process = process_info['Process name']
                             gpu_usage = process_info['GPU Memory Usage']
                             # log 테이블에 서버정보와 gpu정보 추가
-                            gpu_id = gpuid
+                            uuid = dict_server['gpu_abstarct'][server][idx]['uuid']
+                            gpu_id = df_gpu_info[df_gpu_info['uuid'] == uuid]['gpu_id'].values[0]
                             gpu_temp = dict_server['gpu_abstarct'][server][idx]['temperature.gpu']
-
                             query = "INSERT INTO log (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
                             values = (date, server_name, process, gpu_id, cpu_temp, gpu_temp, cpu_usage, gpu_usage, ram_usage)
                             cur.execute(query, values)

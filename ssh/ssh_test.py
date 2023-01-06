@@ -144,8 +144,8 @@ def check_server(server):
             dict_server['server_cpu_ram'][server] = server_cpu_ram
             
             with open(f'dict_{server}_server.json','w',encoding = 'utf-8') as f:
-                json.dump(dict_server, f, indent=2)    
-
+                json.dump(dict_server, f, indent=2)
+                
             cli.close()
             time.sleep(1)
 
